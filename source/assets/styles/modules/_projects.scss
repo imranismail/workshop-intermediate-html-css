@@ -1,0 +1,12 @@
+.project-container {
+    @include make-md-column(10);
+    @include make-md-column-offset(1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.project {
+    @include make-md-column(4);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

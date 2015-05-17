@@ -1,0 +1,22 @@
+{
+  "name": "workshop-intermediate-html-css",
+  "version": "0.1.0",
+  "homepage": "https://github.com/imranismail/workshop-intermediate-html-css",
+  "authors": [
+    "Imran Ismail <imran.codely@gmail.com>"
+  ],
+  "description": "A workshop material that I've constructed for MaGIC",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "bootstrap-social": "~4.9.0"
+  }
+}

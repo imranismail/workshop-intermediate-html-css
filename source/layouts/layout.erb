@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Middleman</title>
+    <title><%= data.site.title %></title>
     <meta charset="utf-8"/>
-    <meta content="Middleman" name="description"/>
+    <meta content="<%= data.site.description %>" name="description"/>
     <meta content="on" http-equiv="cleartype"/>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-    <link href="stylesheets/style.css" rel="stylesheet"></link>
+    <%= stylesheet_link_tag 'main' %>
+    <%= javascript_include_tag 'main' %>
   </head>
   <body>
-    <%= yield %>
-    <%= render_partial 'partials/footer' %>
+    <aside class="sidebar">
+      <div class="sidebar-author">
+        <%= image_tag(data.author.image, class: "img-circle img-responsive") %>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Recent Work</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+      
+      <ul class="sidebar-social-buttons">
+        <li><a class="btn btn-circle btn-md btn-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="btn btn-circle btn-md btn-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="btn btn-circle btn-md btn-google" href="#"><i class="fa fa-google"></i></a></li>
+      </ul>
+    </aside>
+    <main class="main">
+      <%= yield %>
+    </main>
   </body>
 </html>

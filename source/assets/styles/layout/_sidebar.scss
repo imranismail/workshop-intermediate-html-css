@@ -1,0 +1,54 @@
+.sidebar {
+    width: 50%;
+    background-color: $sidebar-bg;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    @media (max-width: $screen-sm-max) {
+        width: 100%;
+        left: -100%;
+    } 
+}
+
+.sidebar-author {
+    @include make-md-column(4);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar-menu {
+    @include list-unstyled();
+    margin-top: 30px;
+    margin-bottom: 30px;
+    li {
+        padding: 5px 10px;
+        a {
+            color: $link-color;
+            font-size: 3em;
+            font-weight: 300;
+            &:hover, &:active, &:focus {
+                text-decoration: none;
+            }
+        }
+        &:hover {
+            background-color: $link-color;
+            
+            a {
+                color: #FFF;
+            }
+        }
+    }
+}
+
+.sidebar-social-buttons {
+    @include list-unstyled();
+    
+    li {
+        display: inline;
+    }
+}
