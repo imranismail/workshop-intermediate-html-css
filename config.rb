@@ -6,11 +6,11 @@ set :images_dir, 'assets/images'
 
 set :fonts_dir, 'assets/fonts'
 
-configure :development do
-  activate :asset_hash
-  
-  activate :directory_indexes
-end
+activate :autoprefixer
+
+activate :asset_hash
+
+activate :directory_indexes
 
 configure :build do
   # For example, change the Compass output style for deployment
@@ -19,12 +19,9 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Enable cache buster
-  activate :asset_hash
-
   # Use relative URLs
   activate :relative_assets
-
+  
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end

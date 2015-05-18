@@ -1,14 +1,7 @@
-.main {
-    width: 50%;
-    margin-left: 50%;
+#main {
+    width: 100%;
     float: left;
     background-color: $main-bg;
-    min-height: 100%;
-    overflow-x: hidden;
+    height: 100vh;
     overflow-y: scroll;
-    
-    @media(max-width: $screen-sm-max) {
-        width: 100%;
-        margin-left: 0;
-    }
 }

@@ -1,4 +1,4 @@
-.project-container {
+#projects {
     @include make-md-column(10);
     @include make-md-column-offset(1);
     margin-top: 30px;
@@ -6,7 +6,46 @@
 }
 
 .project {
-    @include make-md-column(4);
+    @include make-sm-column(6);
+    @include make-lg-column(4);
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.project-container {
+    @include make-row();
+}
+
+.project-caption {
+    position: absolute;
+    display: flex;
+    padding: 5px;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    color: transparent;
+    font-size: 1.35em;
+    text-align: center;
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+    
+    .page-header {
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+        border-bottom-color: transparent;
+        transition: border-bottom-color .2s ease-in-out;
+    }
+    
+    &:hover {
+        .page-header {
+            border-bottom-color: white;
+        }
+        background-color: rgba($link-color, 0.7);
+        transform: scale(0.82912, 0.9);
+        color: white;
+    }
 }

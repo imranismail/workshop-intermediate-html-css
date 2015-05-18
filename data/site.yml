@@ -1,1 +1,11 @@
-title: My Portfolio
+title: "Imran Ismail | Portfolio"
+main_menu:
+    - 
+        name: "ABOUT"
+        url: "#projects"
+    - 
+        name: "PROJECTS"
+        url: "#projects"
+    -
+        name: "CONTACT"
+        url: "#contact"

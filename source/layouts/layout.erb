@@ -6,34 +6,36 @@
     <meta content="<%= data.site.description %>" name="description"/>
     <meta content="on" http-equiv="cleartype"/>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-    <%= stylesheet_link_tag 'main' %>
-    <%= javascript_include_tag 'main' %>
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag 'app' %>
   </head>
   <body>
-    <aside class="sidebar">
-      <div class="sidebar-author">
-        <%= image_tag(data.author.image, class: "img-circle img-responsive") %>
-      </div>
-      <ul class="sidebar-menu">
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Recent Work</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-      
-      <ul class="sidebar-social-buttons">
-        <li><a class="btn btn-circle btn-md btn-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a class="btn btn-circle btn-md btn-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="btn btn-circle btn-md btn-google" href="#"><i class="fa fa-google"></i></a></li>
-      </ul>
-    </aside>
-    <main class="main">
-      <%= yield %>
-    </main>
+    <div id="wrapper">
+      <button class="btn btn-unstyled" id="slideout-toggle"><i class="fa fa-bars fa-3x"></i></button>
+      <aside id="sidebar">
+        <div class="author">
+          <%= image_tag(data.author.image, class: "img-circle img-responsive") %>
+        </div>
+        <ul class="main-menu">
+          <% data.site.main_menu.each do |item| %>
+          <li>
+            <a href="<%= item.url %>"><%= item.name %></a>
+          </li>
+          <% end %>
+        </ul>
+        
+        <ul class="social-menu">
+          <li><a class="btn btn-circle btn-md btn-twitter" href="https://twitter.com/<%= data.author.twitter %>"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="btn btn-circle btn-md btn-facebook" href="https://facebook.com/<%= data.author.facebook %>"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="btn btn-circle btn-md btn-github" href="https://github.com/<%= data.author.github %>"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </aside>
+      <main id="main">
+        <%= yield %>
+      </main>
+    </div>
+    
+    <%= javascript_include_tag 'app' %>
   </body>
 </html>
