@@ -11,31 +11,6 @@
     <%= stylesheet_link_tag 'app' %>
   </head>
   <body>
-    <div id="wrapper">
-      <button class="btn btn-unstyled" id="slideout-toggle"><i class="fa fa-bars fa-3x"></i></button>
-      <aside id="sidebar">
-        <div class="author">
-          <%= image_tag(data.author.image, class: "img-circle img-responsive") %>
-        </div>
-        <ul class="main-menu">
-          <% data.site.main_menu.each do |item| %>
-          <li>
-            <a href="<%= item.url %>"><%= item.name %></a>
-          </li>
-          <% end %>
-        </ul>
-        
-        <ul class="social-menu">
-          <li><a class="btn btn-circle btn-md btn-twitter" href="https://twitter.com/<%= data.author.twitter %>"><i class="fa fa-twitter"></i></a></li>
-          <li><a class="btn btn-circle btn-md btn-facebook" href="https://facebook.com/<%= data.author.facebook %>"><i class="fa fa-facebook"></i></a></li>
-          <li><a class="btn btn-circle btn-md btn-github" href="https://github.com/<%= data.author.github %>"><i class="fa fa-github"></i></a></li>
-        </ul>
-      </aside>
-      <main id="main">
-        <%= yield %>
-      </main>
-    </div>
-    
     <%= javascript_include_tag 'app' %>
   </body>
 </html>
